@@ -1,0 +1,33 @@
+@background-color: #fff;
+@text-color: #f35626;
+@duration: 10s;
+@from-deg: 0deg;
+@to-deg: -360deg;
+
+body{
+  margin: auto;
+  padding: 0;
+  background: @background-color;
+}
+
+.text {
+  color: @text-color;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation: hue @duration infinite linear;
+}
+
+.filter(@deg) {
+  -webkit-filter: hue-rotate(@deg);
+}
+
+@-webkit-keyframes hue {
+  from {
+    .filter(@from-deg);
+  }
+
+  to {
+    .filter(@to-deg);
+  }
+}
